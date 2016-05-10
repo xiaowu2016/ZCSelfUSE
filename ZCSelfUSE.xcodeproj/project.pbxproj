@@ -21,6 +21,8 @@
 		D47FF0AE1CDC8C0E00DE227C /* ZC_ScanLife.m in Sources */ = {isa = PBXBuildFile; fileRef = D47FF0A71CDC8C0E00DE227C /* ZC_ScanLife.m */; };
 		D47FF0AF1CDC8C0E00DE227C /* ZCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47FF0A91CDC8C0E00DE227C /* ZCImageView.m */; };
 		D47FF0B21CDC8C3E00DE227C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47FF0B11CDC8C3E00DE227C /* ViewController.m */; };
+		D4D2E1511CE1DC27002E9FE2 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D2E1501CE1DC27002E9FE2 /* UIView+Category.m */; };
+		D4D2E1541CE1DC64002E9FE2 /* ZCRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D2E1531CE1DC64002E9FE2 /* ZCRecordTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,10 @@
 		D47FF0A91CDC8C0E00DE227C /* ZCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageView.m; sourceTree = "<group>"; };
 		D47FF0B01CDC8C3E00DE227C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D47FF0B11CDC8C3E00DE227C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D4D2E14F1CE1DC27002E9FE2 /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
+		D4D2E1501CE1DC27002E9FE2 /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
+		D4D2E1521CE1DC64002E9FE2 /* ZCRecordTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCRecordTool.h; sourceTree = "<group>"; };
+		D4D2E1531CE1DC64002E9FE2 /* ZCRecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCRecordTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +204,10 @@
 				D47FF0A71CDC8C0E00DE227C /* ZC_ScanLife.m */,
 				D47FF0A81CDC8C0E00DE227C /* ZCImageView.h */,
 				D47FF0A91CDC8C0E00DE227C /* ZCImageView.m */,
+				D4D2E1521CE1DC64002E9FE2 /* ZCRecordTool.h */,
+				D4D2E1531CE1DC64002E9FE2 /* ZCRecordTool.m */,
+				D4D2E14F1CE1DC27002E9FE2 /* UIView+Category.h */,
+				D4D2E1501CE1DC27002E9FE2 /* UIView+Category.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -332,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D2E1541CE1DC64002E9FE2 /* ZCRecordTool.m in Sources */,
 				D47FF0B21CDC8C3E00DE227C /* ViewController.m in Sources */,
 				D47FF0AE1CDC8C0E00DE227C /* ZC_ScanLife.m in Sources */,
 				D47FF0661CDC8B6700DE227C /* main.m in Sources */,
@@ -340,6 +351,7 @@
 				D47FF09A1CDC8C0100DE227C /* AppDelegate.m in Sources */,
 				D47FF0AC1CDC8C0E00DE227C /* NSString+ZC_Regex.m in Sources */,
 				D47FF0AB1CDC8C0E00DE227C /* ZCViewController.m in Sources */,
+				D4D2E1511CE1DC27002E9FE2 /* UIView+Category.m in Sources */,
 				D47FF0AD1CDC8C0E00DE227C /* ZC_AsynchronousBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,9 +495,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ZCSelfUSE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icfcc.ZCSelfUSE;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icfcc.SelfUSE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -494,9 +508,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ZCSelfUSE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.icfcc.ZCSelfUSE;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icfcc.SelfUSE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
