@@ -1,6 +1,6 @@
 //
 //  ZCImageView.h
-//  TSMClient
+//  ZCSelfUSE
 //
 //  Created by zhangchao on 16/4/18.
 //  Copyright © 2016年 icfcc. All rights reserved.

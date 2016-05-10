@@ -1,6 +1,6 @@
 //
 //  ZC_ScanLife.m
-//  二维码
+//  ZCSelfUSE
 //
 //  Created by zhangchao on 15/12/30.
 //  Copyright © 2015年 zhangchao. All rights reserved.
