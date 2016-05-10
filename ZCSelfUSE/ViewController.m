@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 @property (nonatomic,copy) BLOCK block1;
 @property (nonatomic,copy) BLOCK block2;
@@ -73,6 +74,8 @@
     [buttonB setTitle:@"弹出自己想要的弹框" forState:UIControlStateNormal];
     [buttonB addTarget:self action:@selector(didClickB) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonB];
+    
+    
 }
 
 - (void)didClickBtn

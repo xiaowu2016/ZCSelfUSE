@@ -566,6 +566,7 @@
 				D47FF0901CDC8B6700DE227C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D47FF0911CDC8B6700DE227C /* Build configuration list for PBXNativeTarget "ZCSelfUSETests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +575,7 @@
 				D47FF0931CDC8B6700DE227C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D47FF0941CDC8B6700DE227C /* Build configuration list for PBXNativeTarget "ZCSelfUSEUITests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +584,7 @@
 				D47FF0961CDC8B6700DE227C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
