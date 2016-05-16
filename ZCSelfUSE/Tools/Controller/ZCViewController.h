@@ -86,6 +86,15 @@ typedef void(^BLOCK)(void);
                  AndBlockArray:(NSArray<BLOCK> *)blockArray;
 
 /**
+ *  创建一个密码输入弹框
+ *
+ *  @param oneBlock 点击确定时要做的事情
+ *  @param twoBlock 点击取消时要做的事情
+ */
+- (void)showTextFileEntryAlertWithOneBlock:(BLOCK)oneBlock
+                               AndTwoBlock:(BLOCK)twoBlock;
+
+/**
  *  在视图上显示一个自定义的Label,并使它停留一断时间
  *
  *  @param string Label的title

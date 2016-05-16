@@ -12,7 +12,8 @@
 #define kHeight [UIScreen mainScreen].bounds.size.height
 
 @interface ZCViewController ()
-
+@property (nonatomic,strong) UIAlertAction *secureTextAlertAction;
+@property (nonatomic,strong) UITextField *myTextField;
 @end
 
 @implementation ZCViewController
@@ -95,6 +96,59 @@
         [ZCAlert addAction:action];
     }
     [self presentViewController:ZCAlert animated:YES completion:nil];
+}
+
+
+- (void)showTextFileEntryAlertWithOneBlock:(BLOCK)oneBlock
+                               AndTwoBlock:(BLOCK)twoBlock
+{
+    NSString *title = NSLocalizedString(@"温馨提示", nil);
+    NSString *message = NSLocalizedString(@"请输入密码", nil);
+    NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
+    NSString *otherButtonTitle = NSLocalizedString(@"确定", nil);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    //给弹框加一个输入框
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        //添加一个通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTextFieldTextDidChangeNotification:) name:UITextFieldTextDidChangeNotification object:textField];
+        self.myTextField = textField;
+        textField.secureTextEntry = YES;
+    }];
+    
+    // Create the actions.
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        if(oneBlock) oneBlock();
+        //在点击按钮时移除通知
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:alertController.textFields.firstObject];
+    }];
+    
+    UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if(twoBlock) twoBlock();
+        //在点击按钮时移除通知
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:alertController.textFields.firstObject];
+    }];
+    //开始时，确定按钮是不可以被点击的
+    otherAction.enabled = NO;
+    self.secureTextAlertAction = otherAction;
+    
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:otherAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+//临听事件的方法
+- (void)handleTextFieldTextDidChangeNotification:(NSNotification *)notification {
+    UITextField *textField = notification.object;
+    //当输入密码等于六位数的时候确定按钮可以被点击
+    self.secureTextAlertAction.enabled = textField.text.length >= 6;
+    if(textField.text.length >= 6)
+    {//当输入密码等于六位数的时候不可再编辑
+        self.myTextField.enabled = NO;
+    }
 }
 
 

@@ -267,6 +267,13 @@
     self.imageView.y = self.recordBtn.y - self.imageView.height;
 }
 
+
+//点击屏幕弹出密码输入框
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self showTextFileEntryAlertWithOneBlock:self.block1 AndTwoBlock:self.block2];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
