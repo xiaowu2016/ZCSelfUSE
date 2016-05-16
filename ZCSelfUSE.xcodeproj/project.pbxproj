@@ -75,6 +75,7 @@
 		D4D2E1501CE1DC27002E9FE2 /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		D4D2E1521CE1DC64002E9FE2 /* ZCRecordTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCRecordTool.h; sourceTree = "<group>"; };
 		D4D2E1531CE1DC64002E9FE2 /* ZCRecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCRecordTool.m; sourceTree = "<group>"; };
+		D4E8855D1CE9D5DE006438E5 /* SharedHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +209,7 @@
 				D4D2E1531CE1DC64002E9FE2 /* ZCRecordTool.m */,
 				D4D2E14F1CE1DC27002E9FE2 /* UIView+Category.h */,
 				D4D2E1501CE1DC27002E9FE2 /* UIView+Category.m */,
+				D4E8855D1CE9D5DE006438E5 /* SharedHeader.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
