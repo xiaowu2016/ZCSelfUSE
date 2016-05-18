@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40ECEA41CEC7BAE005EE4CB /* NSString+ZC_Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D40ECEA31CEC7BAD005EE4CB /* NSString+ZC_Tool.m */; };
 		D47FF0661CDC8B6700DE227C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D47FF0651CDC8B6700DE227C /* main.m */; };
 		D47FF06F1CDC8B6700DE227C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D47FF06D1CDC8B6700DE227C /* Main.storyboard */; };
 		D47FF0711CDC8B6700DE227C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D47FF0701CDC8B6700DE227C /* Assets.xcassets */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D40ECEA21CEC7BAD005EE4CB /* NSString+ZC_Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZC_Tool.h"; sourceTree = "<group>"; };
+		D40ECEA31CEC7BAD005EE4CB /* NSString+ZC_Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZC_Tool.m"; sourceTree = "<group>"; };
 		D47FF0611CDC8B6700DE227C /* ZCSelfUSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZCSelfUSE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D47FF0651CDC8B6700DE227C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D47FF06E1CDC8B6700DE227C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 			children = (
 				D47FF0A21CDC8C0E00DE227C /* NSString+ZC_Regex.h */,
 				D47FF0A31CDC8C0E00DE227C /* NSString+ZC_Regex.m */,
+				D40ECEA21CEC7BAD005EE4CB /* NSString+ZC_Tool.h */,
+				D40ECEA31CEC7BAD005EE4CB /* NSString+ZC_Tool.m */,
 				D47FF0A41CDC8C0E00DE227C /* ZC_AsynchronousBlock.h */,
 				D47FF0A51CDC8C0E00DE227C /* ZC_AsynchronousBlock.m */,
 				D47FF0A61CDC8C0E00DE227C /* ZC_ScanLife.h */,
@@ -354,6 +359,7 @@
 				D47FF0AC1CDC8C0E00DE227C /* NSString+ZC_Regex.m in Sources */,
 				D47FF0AB1CDC8C0E00DE227C /* ZCViewController.m in Sources */,
 				D4D2E1511CE1DC27002E9FE2 /* UIView+Category.m in Sources */,
+				D40ECEA41CEC7BAE005EE4CB /* NSString+ZC_Tool.m in Sources */,
 				D47FF0AD1CDC8C0E00DE227C /* ZC_AsynchronousBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

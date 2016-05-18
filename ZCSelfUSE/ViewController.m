@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ZCRecordTool.h"
 #import "UIView+Category.h"
+#import "NSString+ZC_Tool.h"
 
 
 @interface ViewController ()<ZCRecordToolDelegate>
