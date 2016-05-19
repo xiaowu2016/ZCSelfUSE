@@ -8,9 +8,9 @@
 
 #import "ZCTool_Base64.h"
 
-#define     LocalStr_None  @""
-static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 @implementation ZCTool_Base64
+#define     LocalStr_None           @""
+static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 +(NSString*)Encrypt:(NSData*)data{
     if (data!=nil&&[data length]!=0) {
         return [self base64EncodedStringFrom:data];
@@ -58,7 +58,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 + (NSData *)dataWithBase64EncodedString:(NSString *)string
 {
     if (string == nil)
-        [NSException raise:NSInvalidArgumentException format:@"异常"];
+        [NSException raise:NSInvalidArgumentException format:nil];
     if ([string length] == 0)
         return [NSData data];
     
@@ -117,4 +117,5 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
     bytes = (char*)realloc(bytes, length);
     return [NSData dataWithBytesNoCopy:bytes length:length];
 }
+
 @end
