@@ -22,6 +22,11 @@
 		D47FF0AE1CDC8C0E00DE227C /* ZC_ScanLife.m in Sources */ = {isa = PBXBuildFile; fileRef = D47FF0A71CDC8C0E00DE227C /* ZC_ScanLife.m */; };
 		D47FF0AF1CDC8C0E00DE227C /* ZCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47FF0A91CDC8C0E00DE227C /* ZCImageView.m */; };
 		D47FF0B21CDC8C3E00DE227C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47FF0B11CDC8C3E00DE227C /* ViewController.m */; };
+		D488713B1CED578100CDD674 /* ZCTool_AES.m in Sources */ = {isa = PBXBuildFile; fileRef = D488713A1CED578100CDD674 /* ZCTool_AES.m */; };
+		D488713E1CED587F00CDD674 /* ZCTool_Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D488713D1CED587F00CDD674 /* ZCTool_Base64.m */; };
+		D48871411CED595400CDD674 /* ZCTool_Des.m in Sources */ = {isa = PBXBuildFile; fileRef = D48871401CED595400CDD674 /* ZCTool_Des.m */; };
+		D488714C1CED5CD500CDD674 /* ZCTool_Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = D488714B1CED5CD500CDD674 /* ZCTool_Md5.m */; };
+		D488714F1CED5D3600CDD674 /* ZCTool_SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = D488714E1CED5D3600CDD674 /* ZCTool_SHA1.m */; };
 		D4D2E1511CE1DC27002E9FE2 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D2E1501CE1DC27002E9FE2 /* UIView+Category.m */; };
 		D4D2E1541CE1DC64002E9FE2 /* ZCRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D2E1531CE1DC64002E9FE2 /* ZCRecordTool.m */; };
 /* End PBXBuildFile section */
@@ -74,6 +79,16 @@
 		D47FF0A91CDC8C0E00DE227C /* ZCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageView.m; sourceTree = "<group>"; };
 		D47FF0B01CDC8C3E00DE227C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D47FF0B11CDC8C3E00DE227C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D48871391CED578100CDD674 /* ZCTool_AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTool_AES.h; sourceTree = "<group>"; };
+		D488713A1CED578100CDD674 /* ZCTool_AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTool_AES.m; sourceTree = "<group>"; };
+		D488713C1CED587F00CDD674 /* ZCTool_Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTool_Base64.h; sourceTree = "<group>"; };
+		D488713D1CED587F00CDD674 /* ZCTool_Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTool_Base64.m; sourceTree = "<group>"; };
+		D488713F1CED595400CDD674 /* ZCTool_Des.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTool_Des.h; sourceTree = "<group>"; };
+		D48871401CED595400CDD674 /* ZCTool_Des.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTool_Des.m; sourceTree = "<group>"; };
+		D488714A1CED5CD500CDD674 /* ZCTool_Md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTool_Md5.h; sourceTree = "<group>"; };
+		D488714B1CED5CD500CDD674 /* ZCTool_Md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTool_Md5.m; sourceTree = "<group>"; };
+		D488714D1CED5D3600CDD674 /* ZCTool_SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCTool_SHA1.h; sourceTree = "<group>"; };
+		D488714E1CED5D3600CDD674 /* ZCTool_SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCTool_SHA1.m; sourceTree = "<group>"; };
 		D4D2E14F1CE1DC27002E9FE2 /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
 		D4D2E1501CE1DC27002E9FE2 /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		D4D2E1521CE1DC64002E9FE2 /* ZCRecordTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCRecordTool.h; sourceTree = "<group>"; };
@@ -215,6 +230,16 @@
 				D4D2E14F1CE1DC27002E9FE2 /* UIView+Category.h */,
 				D4D2E1501CE1DC27002E9FE2 /* UIView+Category.m */,
 				D4E8855D1CE9D5DE006438E5 /* SharedHeader.h */,
+				D48871391CED578100CDD674 /* ZCTool_AES.h */,
+				D488713A1CED578100CDD674 /* ZCTool_AES.m */,
+				D488713C1CED587F00CDD674 /* ZCTool_Base64.h */,
+				D488713D1CED587F00CDD674 /* ZCTool_Base64.m */,
+				D488713F1CED595400CDD674 /* ZCTool_Des.h */,
+				D48871401CED595400CDD674 /* ZCTool_Des.m */,
+				D488714A1CED5CD500CDD674 /* ZCTool_Md5.h */,
+				D488714B1CED5CD500CDD674 /* ZCTool_Md5.m */,
+				D488714D1CED5D3600CDD674 /* ZCTool_SHA1.h */,
+				D488714E1CED5D3600CDD674 /* ZCTool_SHA1.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -349,11 +374,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48871411CED595400CDD674 /* ZCTool_Des.m in Sources */,
 				D4D2E1541CE1DC64002E9FE2 /* ZCRecordTool.m in Sources */,
+				D488714C1CED5CD500CDD674 /* ZCTool_Md5.m in Sources */,
 				D47FF0B21CDC8C3E00DE227C /* ViewController.m in Sources */,
 				D47FF0AE1CDC8C0E00DE227C /* ZC_ScanLife.m in Sources */,
 				D47FF0661CDC8B6700DE227C /* main.m in Sources */,
 				D47FF0AF1CDC8C0E00DE227C /* ZCImageView.m in Sources */,
+				D488714F1CED5D3600CDD674 /* ZCTool_SHA1.m in Sources */,
+				D488713B1CED578100CDD674 /* ZCTool_AES.m in Sources */,
 				D47FF0AA1CDC8C0E00DE227C /* ZCTableViewController.m in Sources */,
 				D47FF09A1CDC8C0100DE227C /* AppDelegate.m in Sources */,
 				D47FF0AC1CDC8C0E00DE227C /* NSString+ZC_Regex.m in Sources */,
@@ -361,6 +390,7 @@
 				D4D2E1511CE1DC27002E9FE2 /* UIView+Category.m in Sources */,
 				D40ECEA41CEC7BAE005EE4CB /* NSString+ZC_Tool.m in Sources */,
 				D47FF0AD1CDC8C0E00DE227C /* ZC_AsynchronousBlock.m in Sources */,
+				D488713E1CED587F00CDD674 /* ZCTool_Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

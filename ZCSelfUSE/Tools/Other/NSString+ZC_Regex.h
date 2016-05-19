@@ -47,4 +47,12 @@
  *  @return YES/NO
  */
 - (BOOL)getIsMatches:(NSString *)aRegex;
+/**
+ *  判断输入的身份证是否正确
+ *
+ *  @param sPaperId 身份证
+ *
+ *  @return YES/NO
+ */
++ (BOOL)isValidateID:(NSString *)sPaperId;
 @end

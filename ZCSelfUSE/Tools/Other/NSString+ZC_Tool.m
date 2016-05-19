@@ -20,6 +20,15 @@
     //返回最近结果
     return pinyin;
 }
+//***生成16位长的随机数字符串***/
++ (NSString *)Rand16{
+    u_int32_t t1= arc4random();
+    u_int32_t t2= arc4random();
+    NSMutableData * randnum=[[NSMutableData alloc]init];
+    [randnum appendBytes:&t1 length:sizeof(u_int32_t)];
+    [randnum appendBytes:&t2 length:sizeof(u_int32_t)];
+    return [NSString hexStringFromData:randnum];
+}
 //***16进制字符串转换为普通字符串***/
 + (NSString *)stringFromHexString:(NSString *)hexString { //
     char *myBuffer = (char *)malloc((int)[hexString length] / 2 + 1);
@@ -159,7 +168,6 @@
                                                         encoding:NSASCIIStringEncoding];
     return string_content;
 }
-
 //卡号每4个字节补空格
 + (NSString *)getPatternCardNumber:(NSString *)cardnumber{
     if (cardnumber==nil) {
@@ -192,5 +200,113 @@
         return nil;
     }
     return [data subdataWithRange:NSMakeRange(start, [data length]-start)];
+}
+#pragma mark 关于时间
+//***根据格式化字符串获得日期yyyy MM dd hh:mm:ss:SSS***/
++ (NSString *)Now:(NSString *)format{
+    NSDate * cur=[NSDate date];
+    NSDateFormatter * DateFormat=[[NSDateFormatter alloc]init];
+    [DateFormat setDateFormat:format];
+    return [DateFormat stringFromDate:cur];
+}
+//1400837821541000  1400914079974
++ (NSString *)MillSeconds{
+    UInt64 recordTime=[[NSDate date]timeIntervalSince1970]*1000;
+    return [NSString stringWithFormat:@"%llu",recordTime];
+}
+//***获取时间戳***/
++ (NSString *)TimeSp{
+    NSDate *datenow = [NSDate date];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMTForDate:datenow];
+    NSDate *localeDate = [datenow dateByAddingTimeInterval: interval];
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[localeDate timeIntervalSince1970]];
+    return timeSp;
+}
+#pragma mark file
+//***读取指定路径文件内容***/
++ (NSData *)ReadFromDocumentPath:(NSString *)path{
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * filepath=[[paths objectAtIndex:0] stringByAppendingPathComponent:path];
+    return [NSData dataWithContentsOfFile:filepath ];
+}
+//***在Document目录下写入文件***/
++ (BOOL)WriteToDocumentPath:(NSString *)path content:(NSData *)content{
+    //need To Complete
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * filepath=[[paths objectAtIndex:0] stringByAppendingPathComponent:path];
+    return [self Write:filepath content:content];
+}
+//***在Document目录下写入文件***/
++ (BOOL)WriteStringToDocumentPath:(NSString *)path content:(NSString *)content{
+    return [self WriteToDocumentPath:path content:[content dataUsingEncoding:NSUTF8StringEncoding] ];
+}
+//***删除Document目录下的文件***/
++ (BOOL)RemoveFromDocumentPath:(NSString *)path{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * filepath=[[paths objectAtIndex:0] stringByAppendingPathComponent:path];
+    return [self Remove:filepath];
+}
+//***在指定路径下写入内容***/
++ (BOOL)Write:(NSString *)path content:(NSData *)content{
+    if ([content writeToFile:path atomically:YES]) {
+        return YES;
+    }else
+    {
+        [NSException raise:@"Write Error" format:@"Cannot write to %@", path];
+        return NO;
+    }
+    
+}
+//***判断指定文件是否存在***/
++ (BOOL)Exist:(NSString *)path{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isDir=NO;
+    BOOL isExist=[fileManager fileExistsAtPath:path isDirectory:&isDir];
+    return isExist&&!isDir;
+}
+//***删除指定路径文件***/
++ (BOOL)Remove:(NSString *)path{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    return [fileManager removeItemAtPath:path error:nil];
+}
+//***获取目录下的所有文件***/
++ (NSArray *)GetFileList:(NSString *)path{
+    NSMutableArray *filenamelist = [NSMutableArray arrayWithCapacity:10];
+    NSArray *tmplist = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
+    for (NSString *filename in tmplist) {
+        NSString *fullpath = [path stringByAppendingPathComponent:filename];
+        if ([NSString Exist:fullpath ]) {
+            [filenamelist  addObject:fullpath];
+        }
+    }
+    return filenamelist;
+}
+//***获取文件夹大小***/
++ (float )folderSizeAtPath:(NSString *)folderPath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if (![manager fileExistsAtPath:folderPath]) return 0;
+    NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
+    NSString* fileName;
+    long long folderSize = 0;
+    while ((fileName = [childFilesEnumerator nextObject]) != nil){
+        NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
+        folderSize += [self fileSizeAtPath:fileAbsolutePath];
+    }
+    return folderSize/(1024.0*1024.0);
+}
+
+//***获取单个文件的大小***/
++ (float)fileSizeAtPath:(NSString *)filePath{
+    
+    NSFileManager* manager = [NSFileManager defaultManager];
+    
+    if ([manager fileExistsAtPath:filePath]){
+        
+        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize]/(1024.0*1024);
+    }
+    return 0;
+    
 }
 @end

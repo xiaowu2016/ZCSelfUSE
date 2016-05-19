@@ -10,6 +10,7 @@
 #import "ZCRecordTool.h"
 #import "UIView+Category.h"
 #import "NSString+ZC_Tool.h"
+#import "NSString+ZC_Regex.h"
 
 
 @interface ViewController ()<ZCRecordToolDelegate>
@@ -273,6 +274,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self showTextFileEntryAlertWithOneBlock:self.block1 AndTwoBlock:self.block2];
+    
 }
 
 - (void)didReceiveMemoryWarning {

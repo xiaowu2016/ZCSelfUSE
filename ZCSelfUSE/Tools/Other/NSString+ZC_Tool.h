@@ -21,6 +21,12 @@
  */
 + (NSString *)transform:(NSString *)chinese;
 /**
+ *  生成16位长的随机数字符串
+ *
+ *  @return 随机数字符串
+ */
++ (NSString *)Rand16;
+/**
  *  16进制字符串转为字符串
  *
  *  @param hexString 16进制字符串
@@ -189,4 +195,109 @@
  *  @return 截取后的数据
  */
 + (NSData *)subdata:(NSData *)data start:(int)start;
+#pragma mark 关于时间
+/**
+ *  根据format指定格式【yyyy MM dd hh:mm:ss:SSS】生成当前时间
+ *
+ *  @param format 格式
+ *
+ *  @return 生成的时间字符串
+ */
++ (NSString *)Now:(NSString *)format;
+/**
+ *  获取当前时间的毫秒字符串
+ *
+ *  @return 生成的时间字符串
+ */
++ (NSString *)MillSeconds;
+/**
+ *  时间戳
+ *
+ *  @return 返回时间戳
+ */
++ (NSString *)TimeSp;
+#pragma mark file
+/**
+ *  读取指定路径文件内容
+ *
+ *  @param path 相对Document的路径
+ *
+ *  @return 文件的所有内容
+ */
++ (NSData *)ReadFromDocumentPath:(NSString *)path;
+/**
+ *  在Document目录下写入文件
+ *
+ *  @param path    相对Document的路径
+ *  @param content 需要写入的内容
+ *
+ *  @return 写入成功与否
+ */
++ (BOOL)WriteToDocumentPath:(NSString *)path content:(NSData *)content;
+/**
+ *  在Document目录下写入文件
+ *
+ *  @param path    相对Document的路径
+ *  @param content 需要写入的内容
+ *
+ *  @return 写入成功与否
+ */
++ (BOOL)WriteStringToDocumentPath:(NSString *)path content:(NSString *)content;
+/**
+ *  删除Document目录下的文件
+ *
+ *  @param path 相对Document的路径
+ *
+ *  @return 删除是否成功
+ */
++ (BOOL)RemoveFromDocumentPath:(NSString *)path;
+/**
+ *  在指定路径下写入内容
+ *
+ *  @param path    指定路径
+ *  @param content 内容
+ *
+ *  @return 是否写入成功
+ */
++ (BOOL)Write:(NSString *)path content:(NSData *)content;
+/**
+ *  判断指定文件是否存在
+ *
+ *  @param path 指定路径
+ *
+ *  @return 是否存在
+ */
++ (BOOL)Exist:(NSString *)path;
+/**
+ *  删除指定路径文件
+ *
+ *  @param path 指定路径
+ *
+ *  @return 是否成功
+ */
++ (BOOL)Remove:(NSString *)path;
+/**
+ *  获取目录下的所有文件
+ *
+ *  @param path 指定目录
+ *
+ *  @return 文件列表
+ */
++ (NSArray *)GetFileList:(NSString *)path;
+/**
+ *  获取文件夹大小
+ *
+ *  @param folderPath 文件夹路径
+ *
+ *  @return 大小
+ */
++ (float)folderSizeAtPath:(NSString *) folderPath;
+/**
+ *  获取文件大小
+ *
+ *  @param filePath 文件路径
+ *
+ *  @return 大小
+ */
++ (float)fileSizeAtPath:(NSString *)filePath;
 @end
