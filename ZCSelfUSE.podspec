@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZCSelfUSE"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "自用小工具"
 
   # This description is used to generate tags and improve search results.
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/xiaowu2016/ZCSelfUSE.git", :tag => "0.1.1" }
+  s.source       = { :git => "https://github.com/xiaowu2016/ZCSelfUSE.git", :tag => "0.1.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
