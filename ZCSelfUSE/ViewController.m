@@ -11,6 +11,10 @@
 #import "UIView+Category.h"
 #import "NSString+ZC_Tool.h"
 #import "NSString+ZC_Regex.h"
+#import "AppDelegate.h"
+#import "TempViewController.h"
+#import "ZC_AsynchronousBlock.h"
+#import "ZCAsyncTransformSync.h"
 
 
 @interface ViewController ()<ZCRecordToolDelegate>
@@ -82,7 +86,6 @@
     [buttonA addTarget:self action:@selector(didClickA) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonA];
     
-    
     UIButton * buttonB = [UIButton buttonWithType:UIButtonTypeSystem];
     buttonB.frame = CGRectMake(100, 200, 200, 30);
     [buttonB setTitle:@"弹出自己想要的弹框" forState:UIControlStateNormal];
@@ -93,6 +96,9 @@
     [self.view addSubview:self.myView];
     [self setup];
     [self addFrame];
+    
+    UINavigationController *NC = [[UINavigationController alloc] initWithRootViewController:self];
+    ((AppDelegate *)[UIApplication sharedApplication].delegate).window.rootViewController = NC;
 }
 
 - (void)didClickBtn
@@ -273,8 +279,43 @@
 //点击屏幕弹出密码输入框
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self showTextFileEntryAlertWithOneBlock:self.block1 AndTwoBlock:self.block2];
+    TempViewController *temp = [[TempViewController alloc] init];
+    [self.navigationController pushViewController:temp animated:YES];
     
+    /*
+    //异步转同步
+    dispatch_async_ZC(^{
+        OutObj *data = [self getDataWithURL:@"http://mobilecdn.kugou.com/api/v3/search/song?format=json&page=1&pagesize=15&showtype=1&callback=kgJSONP238513750%3Cspan%20style=%22white-space:pre&keyword=%E8%83%A1%E6%AD%8C"];
+        if(data.status)
+        {
+            NSLog(@"%@",data.obj);
+        }
+        else
+        {
+            NSLog(@"失败");
+        }
+        NSLog(@"123");
+    });*/
+}
+
+- (OutObj *)getDataWithURL:(NSString *)url
+{    
+    return [ZCAsyncTransformSync wait:^(NSCondition *condition, OutObj *outObj) {
+        [ZC_AsynchronousBlock asynchronousGETWithURLString:url PassBlock:^(NSData *data) {
+            if(data)
+            {
+                outObj.status = YES;
+                outObj.obj = data;
+                [condition signal];
+            }
+            else
+            {
+                outObj.status = NO;
+                outObj.obj = nil;
+                [condition signal];
+            }
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
