@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
   
   s.name         = "ZCSelfUSE"
-  s.version      = "0.1.6"
+  s.version      = "0.1.7"
   s.summary      = "自用小工具"
 
  
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   # s.tvos.deployment_target = "9.0"
 
 
-  s.source       = { :git => "https://github.com/xiaowu2016/ZCSelfUSE.git", :tag => "0.1.6" }
+  s.source       = { :git => "https://github.com/xiaowu2016/ZCSelfUSE.git", :tag => "0.1.7" }
 
   s.source_files  = "Classes", "ZCSelfUSE/Tools/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
