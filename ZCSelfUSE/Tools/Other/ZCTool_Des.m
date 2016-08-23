@@ -8,7 +8,7 @@
 
 #import "ZCTool_Des.h"
 #import "NSString+ZC_Tool.h"
-
+#import <CommonCrypto/CommonCrypto.h>
 @implementation ZCTool_Des
 + (NSData *)TripleDES:(NSData *)data encryptOrDecrypt:(CCOperation)encryptOrDecrypt encryptOrDecryptKey:(NSData *)encryptOrDecryptKey{
     const void *vplainText;

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonCrypto.h>
+
 
 @interface ZCTool_Des : NSObject
 /**
@@ -19,5 +19,5 @@
  *
  *  @return 加解密后的结果
  */
-+ (NSData *)TripleDES:(NSData *)data encryptOrDecrypt:(CCOperation)encryptOrDecrypt encryptOrDecryptKey:(NSData *)encryptOrDecryptKey;
++ (NSData *)TripleDES:(NSData *)data encryptOrDecrypt:(uint32_t)encryptOrDecrypt encryptOrDecryptKey:(NSData *)encryptOrDecryptKey;
 @end

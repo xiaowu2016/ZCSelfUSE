@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
   
   s.name         = "ZCSelfUSE"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "自用小工具"
 
  
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   # s.tvos.deployment_target = "9.0"
 
 
-  s.source       = { :git => "https://github.com/xiaowu2016/ZCSelfUSE.git", :tag => "0.1.5" }
+  s.source       = { :git => "https://github.com/xiaowu2016/ZCSelfUSE.git", :tag => "0.1.6" }
 
   s.source_files  = "Classes", "ZCSelfUSE/Tools/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
-  s.framework  = "CommonCrypto"
+  #s.framework  = "Security"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
@@ -52,7 +52,7 @@ Pod::Spec.new do |s|
 
    s.requires_arc = true
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include" }
   # s.dependency "JSONKit", "~> 1.4"
    s.dependency 'Masonry', '~> 1.0.0' 
 end
